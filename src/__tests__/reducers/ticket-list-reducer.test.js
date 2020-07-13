@@ -36,26 +36,6 @@ describe('ticketListReducer', () => {
     expect(ticketListReducer({}, { type: null })).toEqual({});
   });
 
-  test('Should successfully add new ticket data to masterTickerList', () => {
-    const { names, location, issue, id } = ticketData;
-    action ={
-      type: 'ADD_TICKET',
-      names: names,
-      location: location,
-      issue: issue,
-      id: id,
-    };
-
-    expect(ticketListReducer({}, action)).toEqual({
-      1: {
-        names: names,
-        location: location,
-        issue: issue,
-        id: id,
-      },
-    });
-  });
-
   test("Should update ticket data if key already exists using the same ADD_TICKET Reducer", () => {
     const { names, location, issue, id } = updatedTicketData;
     action = {
