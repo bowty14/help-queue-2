@@ -18,18 +18,18 @@ function TicketList(props){
   if(isLoaded(tickets)) {
     return (
       <React.Fragment>
-        <hr />
-        {tickets.map((ticket) => { 
-          return <Ticket
-            whenTicketClicked={props.onTicketSelection}
-            names={ticket.names}
-            location={ticket.location}
-            issue={ticket.issue}
-            formattedWaitTime={ticket.formattedWaitTime}
-            id={ticket.id}
-            key={ticket.id} />
-  
-        })}
+        <div className='ticketList'>
+          {tickets.map((ticket) => { 
+            return <Ticket 
+              whenTicketClicked={props.onTicketSelection}
+              names={ticket.names}
+              location={ticket.location}
+              issue={ticket.issue}
+              formattedWaitTime={ticket.formattedWaitTime}
+              id={ticket.id}
+              key={ticket.id} />
+            })}
+          </div>
       </React.Fragment>
     );
   } else {
